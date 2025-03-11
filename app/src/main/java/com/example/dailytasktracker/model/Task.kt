@@ -6,8 +6,6 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Task(
-    @PrimaryKey(autoGenerate = true)
-    val taskId:Int = 0,
 
     @ColumnInfo("taskName")
     var taskName:String,
@@ -25,6 +23,9 @@ data class Task(
     var taskDate:String,
 
 ){
+    @PrimaryKey(autoGenerate = true)
+    val taskId:Int = 0
+
     //GETTER - SETTER Yapılabilir.
     /*fun getTaskName():String
     {

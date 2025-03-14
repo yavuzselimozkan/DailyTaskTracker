@@ -8,19 +8,19 @@ import androidx.room.PrimaryKey
 data class Task(
 
     @ColumnInfo(name="taskName")
-    var taskName:String,
+    val taskName:String,
 
     @ColumnInfo(name="taskDesc")
-    var taskDesc:String,
+    val taskDesc:String,
 
     @ColumnInfo(name="isComplete")
-    var isComplete:Boolean,
+    val isComplete:Boolean = false,
 
     @ColumnInfo(name="isFavourite")
-    var isFavourite:Boolean,
+    val isFavourite:Boolean = false,
 
     @ColumnInfo(name="taskDate")
-    var taskDate:String,
+    val taskDate:Long = System.currentTimeMillis()
 
 ){
     @PrimaryKey(autoGenerate = true)

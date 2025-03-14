@@ -6,13 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dailytasktracker.R
+import com.example.dailytasktracker.adapter.TaskRecyclerAdapter
 import com.example.dailytasktracker.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private var _binding : FragmentHomeBinding ?= null
     private val binding get() = _binding!!
+
+    private val adapter = TaskRecyclerAdapter(arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +35,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.recyclerTaskView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerTaskView.adapter = adapter
 
     }
 

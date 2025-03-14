@@ -7,24 +7,24 @@ import androidx.room.PrimaryKey
 @Entity
 data class Task(
 
-    @ColumnInfo("taskName")
+    @ColumnInfo(name="taskName")
     var taskName:String,
 
-    @ColumnInfo("taskDesc")
+    @ColumnInfo(name="taskDesc")
     var taskDesc:String,
 
-    @ColumnInfo("isComplete")
+    @ColumnInfo(name="isComplete")
     var isComplete:Boolean,
 
-    @ColumnInfo("isFavourite")
+    @ColumnInfo(name="isFavourite")
     var isFavourite:Boolean,
 
-    @ColumnInfo("taskDate")
+    @ColumnInfo(name="taskDate")
     var taskDate:String,
 
 ){
     @PrimaryKey(autoGenerate = true)
-    val taskId:Int = 0
+    var taskId:Int = 0
 
     //GETTER - SETTER Yapılabilir.
     /*fun getTaskName():String

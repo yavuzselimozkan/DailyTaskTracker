@@ -30,6 +30,6 @@ interface TaskDAO {
     suspend fun deleteAll()
 
     @Query("select * from Task where taskId = :taskId")
-    suspend fun getTaskById(taskId:Int)
+    suspend fun getTaskById(taskId:Int) : Task
 
 }

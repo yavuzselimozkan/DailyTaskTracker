@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
-    val taskLiveData = MutableLiveData<List<Task>>()
+    val taskListLiveData = MutableLiveData<List<Task>>()
     val taskLoading = MutableLiveData<Boolean>()
     val taskErrorMessage = MutableLiveData<Boolean>()
 
@@ -31,7 +31,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun showTask(taskList:List<Task>)
     {
-        taskLiveData.value = taskList
+        taskListLiveData.value = taskList
         taskLoading.value = false
         taskErrorMessage.value = false
     }

@@ -20,9 +20,10 @@ class TaskRecyclerAdapter(private var taskList : ArrayList<Task>) : RecyclerView
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         holder.binding.taskNameRow.text = taskList[position].taskName
+        holder.binding.taskDescRow.text = taskList[position].taskDesc
     }
 
-    fun updateTaskList(newTaskList : ArrayList<Task>)
+    fun updateTaskList(newTaskList :List<Task>)
     {
         taskList.clear()
         taskList.addAll(newTaskList)

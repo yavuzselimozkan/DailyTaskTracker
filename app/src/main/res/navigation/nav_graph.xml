@@ -13,10 +13,22 @@
         <action
             android:id="@+id/action_homeFragment_to_newTaskFragment"
             app:destination="@id/newTaskFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/newTaskFragment"
         android:name="com.example.dailytasktracker.view.NewTaskFragment"
         android:label="fragment_new_task"
         tools:layout="@layout/fragment_new_task" />
+    <dialog
+        android:id="@+id/taskDetailFragment"
+        android:name="com.example.dailytasktracker.view.TaskDetailFragment"
+        android:label="fragment_task_detail"
+        tools:layout="@layout/fragment_task_detail" >
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+    </dialog>
 </navigation>

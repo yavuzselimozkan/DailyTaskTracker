@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.dailytasktracker.R
 import com.example.dailytasktracker.adapter.TaskRecyclerAdapter
 import com.example.dailytasktracker.databinding.FragmentHomeBinding
 import com.example.dailytasktracker.viewModel.HomeViewModel
@@ -29,10 +27,10 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
-        val view = binding?.root
+        val view = binding.root
         return view
     }
 
@@ -59,5 +57,6 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        _binding=null
     }
 }

@@ -4,11 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="8dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="80dp"
+        android:layout_weight="4"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:gravity="center"
@@ -36,6 +37,17 @@
 
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:layout_weight="0.6"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_options"
+        android:background="#00000000"
+        android:contentDescription="@string/options"
+        android:layout_marginStart="8dp"/>
 
 
 </LinearLayout>

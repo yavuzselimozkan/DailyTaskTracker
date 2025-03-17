@@ -25,7 +25,7 @@ class TaskRecyclerAdapter(private var taskList : ArrayList<Task>) : RecyclerView
         holder.binding.taskNameRow.text = taskList[position].taskName
         holder.binding.taskDescRow.text = taskList[position].taskDesc
 
-        holder.itemView.setOnClickListener {
+        holder.binding.options.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToTaskDetailFragment(taskList[position].taskId)
             Navigation.findNavController(it).navigate(action)
         }

@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.FragmentTaskDetailBinding
 import com.example.dailytasktracker.viewModel.TaskDetailViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class TaskDetailFragment() : DialogFragment() {
+class TaskDetailFragment() : BottomSheetDialogFragment() {
 
     private var _binding:FragmentTaskDetailBinding ?= null
     private val binding get()= _binding!!

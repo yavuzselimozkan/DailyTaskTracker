@@ -13,6 +13,7 @@ import kotlinx.coroutines.withContext
 class TaskDetailViewModel(application: Application) : AndroidViewModel(application) {
 
     var taskLiveData = MutableLiveData<Task>()
+    var taskFavLiveData = MutableLiveData<Boolean>()
 
     fun getTaskDetail(id:Int){
         viewModelScope.launch(Dispatchers.IO){
@@ -22,6 +23,13 @@ class TaskDetailViewModel(application: Application) : AndroidViewModel(applicati
             withContext(Dispatchers.Main){
                 taskLiveData.value = task
             }
+        }
+    }
+
+    fun deleteTask(id:Int){
+        viewModelScope.launch(Dispatchers.IO) {
+            val taskDao = TaskDatabase(getApplication()).taskDao()
+            taskDao.deleteTask(id)
         }
     }
 }

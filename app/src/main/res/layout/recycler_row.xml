@@ -37,17 +37,4 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/options"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="48dp"
-        android:layout_weight="0.6"
-        android:layout_gravity="center"
-        android:src="@drawable/baseline_options"
-        android:background="#00000000"
-        android:contentDescription="@string/options"
-        android:layout_marginStart="8dp"/>
-
-
 </LinearLayout>

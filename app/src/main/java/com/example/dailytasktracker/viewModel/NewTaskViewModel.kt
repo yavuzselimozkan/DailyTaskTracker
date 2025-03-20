@@ -11,37 +11,11 @@ import kotlinx.coroutines.launch
 
 class NewTaskViewModel(application: Application) : AndroidViewModel(application) {
 
-    val taskLiveData = MutableLiveData<Task>()
-
-    fun getTaskDetail(taskId:Int)
-    {
-        viewModelScope.launch(Dispatchers.IO) {
-            val taskDao = TaskDatabase(getApplication()).taskDao()
-            taskLiveData.value = taskDao.getTaskById(taskId)
-        }
-    }
-
     fun insertTask(task:Task)
     {
         viewModelScope.launch(Dispatchers.IO) {
             val taskDao = TaskDatabase(getApplication()).taskDao()
             taskDao.insertTask(task)
-        }
-    }
-
-    fun updateTask(newTask:Task)
-    {
-        viewModelScope.launch(Dispatchers.IO){
-            val taskDao = TaskDatabase(getApplication()).taskDao()
-            taskDao.updateTask(newTask)
-        }
-    }
-
-    fun deleteTask(deleteTask:Task)
-    {
-        viewModelScope.launch(Dispatchers.IO){
-            val taskDao = TaskDatabase(getApplication()).taskDao()
-            taskDao.deleteTask(deleteTask)
         }
     }
 }

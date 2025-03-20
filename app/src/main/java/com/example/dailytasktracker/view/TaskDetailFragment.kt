@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.DialogFragment
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.FragmentTaskDetailBinding
 import com.example.dailytasktracker.viewModel.TaskDetailViewModel
@@ -17,6 +21,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
     private val binding get()= _binding!!
 
     private lateinit var viewModel:TaskDetailViewModel
+    private lateinit var navController: NavController
     private var id=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,13 +43,18 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this)[TaskDetailViewModel::class.java]
+        navController = requireActivity().findNavController(R.id.fragmentContainerView)
 
-        arguments?.let{
-            id=TaskDetailFragmentArgs.fromBundle(it).taskId
+        arguments?.let{ bundle ->
+            id=TaskDetailFragmentArgs.fromBundle(bundle).id
             viewModel.getTaskDetail(id)
+
+            binding.imgDelete.setOnClickListener { deleteTask(it,id) }
         }
         //Bu fonksiyon ile taskLiveData doldu.
         //Dolunca observe olmalı ki değişiklikleri ele alalım ve name, desc gibi alanları observe de dolduralım
+
+        binding.imgFavourite.setOnClickListener { }
 
         observeLiveData()
 
@@ -56,6 +66,20 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
             binding.taskNameDetail.text = it.taskName
             binding.taskDescDetail.text = it.taskDesc
         }
+    }
+
+    private fun setFavourite(view:View){
+        //TODO
+    }
+
+    private fun deleteTask(view: View,id: Int){
+        //Silme işlemi gerçekleştirilirken recycler view da güncellendi. Navigate işlemi ile tekrar homeFragment gösterildiği için onViewCreated ta işlemler aynen gerçekleşti.
+        //TODO YAŞAM DÖNGÜLERİNİ KONTROL ET. BİRİKMELER OLMASIN
+        viewModel.deleteTask(id)
+        dismiss()
+        navController.navigate(R.id.action_taskDetailFragment_to_homeFragment)
+        Toast.makeText(view.context,"Görev başarıyla silindi!",Toast.LENGTH_LONG).show()
+        println("Görev silindi! $id")
     }
 
     override fun onDestroyView() {

@@ -32,4 +32,7 @@ interface TaskDAO {
     @Query("select * from Task where taskId = :taskId")
     suspend fun getTaskById(taskId:Int) : Task
 
+    @Query("update Task set isFavourite = :taskFav where taskId = :taskId")
+    suspend fun setFavouriteTask(taskId:Int,taskFav:Boolean)
+
 }

@@ -14,10 +14,10 @@ data class Task(
     val taskDesc:String,
 
     @ColumnInfo(name="isComplete")
-    val isComplete:Boolean = false,
+    var isComplete:Boolean = false,
 
     @ColumnInfo(name="isFavourite")
-    val isFavourite:Boolean = false,
+    var isFavourite:Boolean = false,
 
     @ColumnInfo(name="taskDate")
     val taskDate:Long = System.currentTimeMillis()

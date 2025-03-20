@@ -79,13 +79,13 @@
                     android:clickable="true"
                     android:focusable="true"/>
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/imgDelete"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:minHeight="48dp"
-                    android:padding="1dp"
+                    android:padding="7dp"
                     android:layout_margin="10dp"
                     android:src="@drawable/baseline_delete"
                     android:background="?attr/selectableItemBackgroundBorderless"

@@ -3,11 +3,17 @@
 
     <item
         android:id="@+id/homeFragment"
+        android:icon="@drawable/round_home"
         android:title="Home"/>
 
     <item
         android:id="@+id/newTaskFragment"
-        android:title="New Fragment"
+        android:title="Add Task"
         android:icon="@drawable/baseline_add_24"/>
+    <item
+        android:id="@+id/favouriteTaskFragment"
+        android:title="Favourite Task"
+        android:icon="@drawable/favorite"/>
+
 
 </menu>

@@ -6,4 +6,5 @@
     <string name="update">update</string>
     <string name="delete">delete</string>
     <string name="options">options</string>
+    <string name="check_task">check task\n</string>
 </resources>

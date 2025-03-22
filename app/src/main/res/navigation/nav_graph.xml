@@ -21,7 +21,11 @@
         android:id="@+id/newTaskFragment"
         android:name="com.example.dailytasktracker.view.NewTaskFragment"
         android:label="fragment_new_task"
-        tools:layout="@layout/fragment_new_task" />
+        tools:layout="@layout/fragment_new_task" >
+        <action
+            android:id="@+id/action_newTaskFragment_to_favouriteTaskFragment2"
+            app:destination="@id/favouriteTaskFragment" />
+    </fragment>
     <dialog
         android:id="@+id/taskDetailFragment"
         android:name="com.example.dailytasktracker.view.TaskDetailFragment"
@@ -36,4 +40,9 @@
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
     </dialog>
+    <fragment
+        android:id="@+id/favouriteTaskFragment"
+        android:name="com.example.dailytasktracker.view.FavouriteTaskFragment"
+        android:label="fragment_favourite_task"
+        tools:layout="@layout/fragment_favourite_task" />
 </navigation>

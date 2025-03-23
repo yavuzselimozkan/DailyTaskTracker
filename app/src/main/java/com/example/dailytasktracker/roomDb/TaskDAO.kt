@@ -38,4 +38,7 @@ interface TaskDAO {
     @Query("update Task set isFavourite = :taskFav where taskId = :taskId")
     suspend fun setFavouriteTask(taskId:Int,taskFav:Boolean)
 
+    @Query("update Task set isComplete = :taskComplete where taskId = :taskId")
+    suspend fun setCompleteTask(taskId:Int,taskComplete:Boolean)
+
 }

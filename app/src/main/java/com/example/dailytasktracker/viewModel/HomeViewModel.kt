@@ -36,4 +36,13 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         taskErrorMessage.value = false
     }
 
+    fun setCompleteTask(id:Int){
+        viewModelScope.launch(Dispatchers.IO){
+            val taskDao = TaskDatabase(getApplication()).taskDao()
+            val task = taskDao.getTaskById(id)
+            taskDao.setCompleteTask(id,!task.isComplete)
+            taskListLiveData.postValue(taskDao.getAllTask())
+        }
+    }
+
 }

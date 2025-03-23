@@ -24,4 +24,16 @@ class FavouriteTaskViewModel(application: Application) : AndroidViewModel(applic
         }
     }
 
+    fun setCompleteTask(id:Int){
+        viewModelScope.launch(Dispatchers.IO){
+            val taskDao = TaskDatabase(getApplication()).taskDao()
+            val task = taskDao.getTaskById(id)
+            taskDao.setCompleteTask(id,!task.isComplete)
+            //burada bunu güncellememizin sebebi adapter içerisindeki listedeki
+            // elemanların isComplete değerine göre
+            // checked ya unchecked durumu ele alınıyor bu yüzden liste güncellenmeli
+            favTaskLiveData.postValue(taskDao.getAllFavTask())
+        }
+    }
+
 }

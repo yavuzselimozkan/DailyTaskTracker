@@ -16,7 +16,7 @@ class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding ?= null
     private val binding get() = _binding!!
 
-    private val adapter = TaskRecyclerAdapter(arrayListOf())
+    private lateinit var adapter : TaskRecyclerAdapter
     private lateinit var viewModel:HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +39,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        adapter = TaskRecyclerAdapter(arrayListOf()){id->
+            viewModel.setCompleteTask(id)
+        }
+
         viewModel.getDataFromRoom()
 
         binding.recyclerTaskView.layoutManager = LinearLayoutManager(requireContext())

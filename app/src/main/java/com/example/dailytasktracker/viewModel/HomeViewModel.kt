@@ -27,6 +27,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 showTask(taskList)
             }
         }
+        println("HomeViewModel- getDataFromRoom çalıştı.")
     }
 
     private fun showTask(taskList:List<Task>)

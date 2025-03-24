@@ -55,6 +55,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
             binding.imgDelete.setOnClickListener { deleteTask(it,id) } //tuşa basınca silecek
             println("gelen id $id")
             binding.imgFavourite.setOnClickListener { setFavouriteTask(it,id) }//tuşa basınca favorileyecek
+            binding.imgUpdate.setOnClickListener { goUpdatePage(it,id) }
         }
         //Bu fonksiyon ile taskLiveData doldu.
         //Dolunca observe olmalı ki değişiklikleri ele alalım ve name, desc gibi alanları observe de dolduralım
@@ -109,6 +110,12 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
         navController.navigate(R.id.action_taskDetailFragment_to_homeFragment)
         Toast.makeText(view.context,"Görev başarıyla silindi!",Toast.LENGTH_LONG).show()
         println("Görev silindi! $id")
+    }
+
+    private fun goUpdatePage(view:View,id: Int){
+        dismiss()
+        val action = TaskDetailFragmentDirections.actionTaskDetailFragmentToUpdateTaskFragment(id)
+        navController.navigate(action)
     }
 
     override fun onDestroyView() {

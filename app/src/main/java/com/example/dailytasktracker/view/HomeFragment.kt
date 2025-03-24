@@ -37,6 +37,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        println("HomeFragment onViewCreated Called!")
+
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         adapter = TaskRecyclerAdapter(arrayListOf()){id->
@@ -55,7 +57,8 @@ class HomeFragment : Fragment() {
     private fun observeLiveData()
     {
         viewModel.taskListLiveData.observe(viewLifecycleOwner){
-            //içerik her yenilendiğinde adapterdaki veri güncellenecek
+            println("HomeFragment - Veritabanındaki Güncel Task Listesi: $it")
+            //içerik her yenilendiğinde adapterdaki veri güncellenecek - ISFIRSTOBSERVATION kontrolü yap
             adapter.updateTaskList(it)
         }
     }

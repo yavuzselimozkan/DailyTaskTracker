@@ -7,4 +7,6 @@
     <string name="delete">delete</string>
     <string name="options">options</string>
     <string name="check_task">check task\n</string>
+    <string name="isim_giriniz">İsim giriniz</string>
+    <string name="aciklama_giriniz">Açıklama giriniz</string>
 </resources>

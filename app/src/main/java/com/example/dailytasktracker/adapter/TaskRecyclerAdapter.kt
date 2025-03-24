@@ -39,6 +39,7 @@ class TaskRecyclerAdapter(
             val action = HomeFragmentDirections.actionHomeFragmentToTaskDetailFragment(taskList[position].taskId)
             Navigation.findNavController(it).navigate(action)
             println("Task complete: "+taskList[position].isComplete)
+            println("Task name: "+taskList[position].taskName)
         }
 
         if(taskList[position].isComplete){

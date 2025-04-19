@@ -37,7 +37,8 @@ android {
     }
 
     buildFeatures{
-        viewBinding = true;
+        viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -70,4 +71,8 @@ dependencies {
     ksp("androidx.room:room-compiler:$room_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     implementation ("androidx.room:room-ktx:$room_version")
+
+    //WorkManager
+    val work_version = "2.7.1" // En güncel sürümü kontrol edin
+    implementation("androidx.work:work-runtime-ktx:$work_version")
 }

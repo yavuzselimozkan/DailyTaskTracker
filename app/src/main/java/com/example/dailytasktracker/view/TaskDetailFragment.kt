@@ -121,6 +121,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null
+        println("onDestroyÇalıştı")
     }
 
 }

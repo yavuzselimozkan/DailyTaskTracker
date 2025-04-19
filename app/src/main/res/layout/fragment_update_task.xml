@@ -17,6 +17,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Name"
+        android:textColor="?attr/colorOnSurface"
         android:hint="@string/isim_giriniz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +32,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Name"
+        android:textColor="?attr/colorOnSurface"
         android:hint="@string/aciklama_giriniz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +45,7 @@
         android:minHeight="48dp"
         android:layout_marginTop="60dp"
         android:text="Update"
+        android:backgroundTint="?attr/colorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTaskDesc" />

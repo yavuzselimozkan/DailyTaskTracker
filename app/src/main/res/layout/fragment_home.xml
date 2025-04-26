@@ -4,36 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.HomeFragment"
-    android:background="?attr/colorPrimaryVariant">
+    android:background="?attr/colorPrimaryVariant"
+    tools:context=".view.HomeFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSecondary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressIndicator"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:indeterminate="false"
-        app:indicatorSize="150dp"
-        app:indicatorInset="0dp"
-        app:trackThickness="12dp"
-        app:trackCornerRadius="12dp"
-        app:trackColor="?attr/colorSurface"
-        app:indicatorTrackGapSize="0dp"
-        app:indicatorColor="?attr/colorSecondary"
-        android:progress="70"
         android:max="100"
+        android:progress="70"
+        app:indicatorColor="?attr/colorSecondary"
+        app:indicatorInset="0dp"
+        app:indicatorSize="150dp"
+        app:indicatorTrackGapSize="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:trackColor="?attr/colorSurface"
+        app:trackCornerRadius="12dp"
+        app:trackThickness="12dp" />
 
     <TextView
         android:id="@+id/progressText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="7/10"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="?attr/colorOnSurface"
         app:layout_constraintBottom_toBottomOf="@+id/progressIndicator"
         app:layout_constraintEnd_toEndOf="@+id/progressIndicator"
         app:layout_constraintStart_toStartOf="@+id/progressIndicator"
@@ -43,24 +53,12 @@
         android:id="@+id/recyclerTaskView"
         android:layout_width="350dp"
         android:layout_height="350dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rv_bg"
         android:paddingHorizontal="12dp"
         android:paddingTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/recyclerTaskView"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerTaskView"
-        app:layout_constraintStart_toStartOf="@+id/recyclerTaskView"
-        app:layout_constraintTop_toTopOf="@+id/recyclerTaskView" />
+        app:layout_constraintTop_toBottomOf="@+id/progressIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

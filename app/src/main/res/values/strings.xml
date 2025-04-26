@@ -10,4 +10,6 @@
     <string name="isim_giriniz">İsim giriniz</string>
     <string name="aciklama_giriniz">Açıklama giriniz</string>
     <string name="percentText">%1$d/%2$d</string>
+    <string name="notification">Bildirimler</string>
+    <string name="darkTheme">Karanlık Tema</string>
 </resources>

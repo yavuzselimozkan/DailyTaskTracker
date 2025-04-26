@@ -43,6 +43,10 @@ fun calculateMidNightTime():Long{
     return midNightTime.timeInMillis
 }
 
+/*fun cancelTestWorker(context: Context) {
+    WorkManager.getInstance(context).cancelUniqueWork("test_notification_work")
+}*/
+
 /*fun testWorker(context: Context){
 
     val testCleanupRequest = OneTimeWorkRequestBuilder<DailyCleanupWorker>()
@@ -70,9 +74,7 @@ fun testKeepWorker(context: Context){
 
 }
 
-fun cancelTestWorker(context: Context) {
-    WorkManager.getInstance(context).cancelUniqueWork("TestCleanup")
-}
+
 
 fun cancelAllWorkers(context: Context) {
     WorkManager.getInstance(context).cancelAllWork()  // Tüm işlerin iptal edilmesini sağlar.

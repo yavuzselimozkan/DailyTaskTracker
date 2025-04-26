@@ -1,5 +1,8 @@
 package com.example.dailytasktracker.view
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +15,7 @@ import androidx.navigation.findNavController
 import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.FragmentTaskDetailBinding
 import com.example.dailytasktracker.viewModel.TaskDetailViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -24,6 +28,16 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
     private lateinit var viewModel:TaskDetailViewModel
     private lateinit var navController: NavController
     private var id=0
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
+        dialog.setOnShowListener { dialogInterface ->
+            val bottomSheet = (dialogInterface as BottomSheetDialog)
+                .findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
+            bottomSheet?.background = ColorDrawable(Color.TRANSPARENT)
+        }
+        return dialog
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.work.Configuration
 import com.example.dailytasktracker.service.setUpDailyCleanupWorker
+import com.example.dailytasktracker.util.NotificationUtil
 
 class MyApplication : Application(), Configuration.Provider {
 

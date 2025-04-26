@@ -2,17 +2,20 @@ package com.example.dailytasktracker.view
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.ViewModelProvider
 import com.example.dailytasktracker.databinding.FragmentNewTaskBinding
 import com.example.dailytasktracker.model.Task
 import com.example.dailytasktracker.viewModel.NewTaskViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class NewTaskFragment : Fragment() {
 
@@ -24,6 +27,7 @@ class NewTaskFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        viewModel = ViewModelProvider(this)[NewTaskViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -39,10 +43,9 @@ class NewTaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this)[NewTaskViewModel::class.java]
-
         binding.btnSave.setOnClickListener { saveNewTask(it) }
 
+        logCurrentTime("Güncel Zaman")
     }
 
     private fun saveNewTask(view: View)
@@ -62,6 +65,15 @@ class NewTaskFragment : Fragment() {
         }else{
             Toast.makeText(view.context,"İsim ve Açıklama boş olamaz!",Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun logCurrentTime(stage: String) {
+        val currentTimeMillis = System.currentTimeMillis()
+        val date = Date(currentTimeMillis)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val formattedDate = dateFormat.format(date)
+
+        Log.d("CurrentTime", "$stage Time: $formattedDate")
     }
 
     override fun onDestroyView() {

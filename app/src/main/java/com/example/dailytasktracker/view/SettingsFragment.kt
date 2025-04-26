@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.dailytasktracker.databinding.FragmentSettingsBinding
 import com.example.dailytasktracker.util.NotificationPermissionHelper
 import com.example.dailytasktracker.util.NotificationUtil
@@ -64,6 +65,21 @@ class SettingsFragment : BottomSheetDialogFragment() {
                 NotificationUtil.cancelNotification(requireContext())
                 Toast.makeText(requireContext(),"Bildirimler sessize alındı",Toast.LENGTH_LONG).show()
             }
+        }
+
+        //Dark Theme Kontrolü
+        val isDark = SettingsManager.isDarkTheme(requireContext())
+        binding.darkThemeSwitch.isChecked = isDark
+
+        binding.darkThemeSwitch.setOnCheckedChangeListener{_,dark->
+            if(dark){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                SettingsManager.setDarkTheme(requireContext(),true)
+            }else{
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                SettingsManager.setDarkTheme(requireContext(),false)
+            }
+
         }
     }
 

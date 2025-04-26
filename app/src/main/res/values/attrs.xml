@@ -2,4 +2,5 @@
 <resources>
     <attr name="customRVBg" format="reference"/>
     <attr name="customRowBg" format="reference"/>
+    <attr name="colorOnSurface" format ="color"/>
 </resources>

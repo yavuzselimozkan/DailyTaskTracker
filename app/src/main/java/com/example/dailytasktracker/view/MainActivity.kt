@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.ActivityMainBinding
+import com.example.dailytasktracker.util.SettingsManager
 import com.example.dailytasktracker.viewModel.MainActivityViewModel
 import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.color.MaterialColors
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,11 +46,19 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.navController.addOnDestinationChangedListener{_,destination,_ ->
             val isActive = destination.id == R.id.favouriteTaskFragment
             if(isActive){
-                badge.badgeTextColor = ContextCompat.getColor(this,R.color.md_on_surface)
+                badge.badgeTextColor = MaterialColors.getColor(this,R.attr.colorOnSurface,Color.BLACK)
             }else{
-                badge.badgeTextColor = getColor(R.color.md_surface)
+                badge.badgeTextColor = MaterialColors.getColor(this, R.attr.colorOnSurface,Color.BLACK)
             }
 
+        }
+
+        //Light-Dark Theme
+        val isDark = SettingsManager.isDarkTheme(applicationContext)
+        if(isDark){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
     }

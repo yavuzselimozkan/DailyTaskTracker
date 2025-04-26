@@ -5,13 +5,28 @@
     <color name="light_dialog_bar">#F2F2FA</color>
 
     <!-- Primary Colors -->
-    <color name="md_primary">#FFF4FF</color>
+    <color name="md_primary">#FFF7F0</color>
     <color name="md_primary_variant">#F7F3F2</color>
     <color name="md_secondary">#7A5649</color>
     <color name="md_surface">#EAE2CD</color>
     <color name="md_on_surface">#1B1817</color>
 
-    <color name="md_o_surface">#7A6A4F</color>
+    <!-- Primary Dark Colors -->
+    <color name="mn_primary">#3C2A21</color>
+    <color name="mn_primary_variant">#1A120B</color>
+    <color name="mn_secondary">#D5CEA3</color>
+    <color name="mn_surface">#E5E5CB</color>
+    <color name="mn_on_surface">#1B1817</color>
+
+    <color name="cmn_primary">#241D13</color> <!-- Önemli vurgular için -->
+    <color name="cmn_primary_variant">#19150B</color> <!-- Hafif ikincil vurgular, secondary görünüm -->
+    <color name="cmn_secondary">#543E22</color> <!-- İkincil butonlar veya küçük vurgular -->
+    <color name="cmn_surface">#2E1F17</color> <!-- Arka plan -->
+    <color name="cmn_on_surface">#F6ECE0</color> <!-- Yazılar ve ikonlar -->
+
+    <color name="cmn_passive">#72572F</color>
+    <color name="cmn_active">#EAD6BE</color>
+
 
     <!-- Outline -->
     <color name="md_theme_light_outline">#79747E</color>

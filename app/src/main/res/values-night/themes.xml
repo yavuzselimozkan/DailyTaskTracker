@@ -1,7 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DailyTaskTracker" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.DTT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/cmn_primary</item>
+        <item name="colorPrimaryVariant">@color/cmn_primary_variant</item>
+        <item name="colorSecondary">@color/cmn_secondary</item>
+
+        <!-- Surface and background colors -->
+        <item name="colorSurface">@color/cmn_surface</item>
+        <item name="colorOnSurface">@color/cmn_on_surface</item>
+
+        <!-- Text and icon colors -->
+        <item name="android:textColorPrimary">@color/cmn_on_surface</item>
+        <item name="android:textColorSecondary">@color/cmn_surface</item>
     </style>
+
+    <style name="Base.Theme.DailyTaskTracker" parent = "Theme.MaterialComponents.DayNight.NoActionBar"/>
 </resources>

@@ -43,7 +43,12 @@ class FavTaskRecyclerAdapter(
         }
 
         holder.itemView.setOnClickListener {
+            holder.itemView.isEnabled = false
             println("Task ${favTaskList[position].isComplete}")
+
+            holder.itemView.postDelayed({
+                holder.itemView.isEnabled = true
+            },550)
         }
 
     }

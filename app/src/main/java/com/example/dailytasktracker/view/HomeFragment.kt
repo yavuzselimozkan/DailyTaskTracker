@@ -117,6 +117,7 @@ class HomeFragment : Fragment() {
         viewModel.totalTasks.observe(viewLifecycleOwner){total->
             totalTasks = total ?: 0
             updateProgress(totalTasks,completedTasks)
+            showRvMessage(total)
         }
 
         viewModel.completedTasks.observe(viewLifecycleOwner){completed->
@@ -139,6 +140,16 @@ class HomeFragment : Fragment() {
     private fun showSettingDialog(view:View){
         val action = HomeFragmentDirections.actionHomeFragmentToSettingsFragment()
         Navigation.findNavController(view).navigate(action)
+    }
+
+    private fun showRvMessage(total:Int){
+        if(total>0){
+            binding.viewStub.visibility = View.GONE
+            binding.recyclerTaskView.visibility = View.VISIBLE
+        }else{
+            binding.viewStub.visibility = View.VISIBLE
+            binding.recyclerTaskView.visibility = View.GONE
+        }
     }
 
     override fun onDestroyView() {

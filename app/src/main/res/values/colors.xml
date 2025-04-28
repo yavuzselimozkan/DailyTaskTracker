@@ -18,8 +18,8 @@
     <color name="mn_surface">#E5E5CB</color>
     <color name="mn_on_surface">#1B1817</color>
 
-    <color name="cmn_primary">#241D13</color> <!-- Önemli vurgular için -->
-    <color name="cmn_primary_variant">#19150B</color> <!-- Hafif ikincil vurgular, secondary görünüm -->
+    <color name="cmn_primary">#2E2619</color> <!-- Önemli vurgular için -->
+    <color name="cmn_primary_variant">#211B10</color> <!-- Hafif ikincil vurgular, secondary görünüm -->
     <color name="cmn_secondary">#543E22</color> <!-- İkincil butonlar veya küçük vurgular -->
     <color name="cmn_surface">#2E1F17</color> <!-- Arka plan -->
     <color name="cmn_on_surface">#F6ECE0</color> <!-- Yazılar ve ikonlar -->

@@ -36,10 +36,14 @@ class TaskRecyclerAdapter(
 
         //TODO ARD ARDA TIKLAYINCA HATA ALINIYOR.
         holder.itemView.setOnClickListener {
+            holder.itemView.isEnabled = false
             val action = HomeFragmentDirections.actionHomeFragmentToTaskDetailFragment(taskList[position].taskId)
             Navigation.findNavController(it).navigate(action)
-            println("Task complete: "+taskList[position].isComplete)
-            println("Task name: "+taskList[position].taskName)
+            /*println("Task complete: "+taskList[position].isComplete)
+            println("Task name: "+taskList[position].taskName)*/
+            holder.itemView.postDelayed({
+                holder.itemView.isEnabled = true
+            },550)
         }
 
         if(taskList[position].isComplete){

@@ -12,4 +12,7 @@
     <string name="percentText">%1$d/%2$d</string>
     <string name="notification">Bildirimler</string>
     <string name="darkTheme">Karanlık Tema</string>
+    <string name="bos_liste">boş liste</string>
+    <string name="empty_list">Görev Yok. 👀</string>
+    <string name="add_tasks">Biraz görev ekleyebilirsin.</string>
 </resources>

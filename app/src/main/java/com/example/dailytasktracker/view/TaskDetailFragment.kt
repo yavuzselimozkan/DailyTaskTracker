@@ -68,8 +68,8 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
 
             binding.imgDelete.setOnClickListener { deleteTask(it,id) } //tuşa basınca silecek
             println("gelen id $id")
-            binding.imgFavourite.setOnClickListener { setFavouriteTask(it,id) }//tuşa basınca favorileyecek
-            binding.imgUpdate.setOnClickListener { goUpdatePage(it,id) }
+            binding.imgFavourite.setOnClickListener { setFavouriteTask(id) }//tuşa basınca favorileyecek
+            binding.imgUpdate.setOnClickListener { goUpdatePage(id) }
         }
         //Bu fonksiyon ile taskLiveData doldu.
         //Dolunca observe olmalı ki değişiklikleri ele alalım ve name, desc gibi alanları observe de dolduralım
@@ -105,7 +105,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
         }
     }
 
-    private fun setFavouriteTask(view:View,id:Int){
+    private fun setFavouriteTask(id:Int){
         //true gelirse ve tuşa basarsa false olacak. Ya da tam tersi
         viewModel.setFavouriteTask(id)
         lifecycleScope.launch{
@@ -126,7 +126,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
         println("Görev silindi! $id")
     }
 
-    private fun goUpdatePage(view:View,id: Int){
+    private fun goUpdatePage(id: Int){
         dismiss()
         val action = TaskDetailFragmentDirections.actionTaskDetailFragmentToUpdateTaskFragment(id)
         navController.navigate(action)

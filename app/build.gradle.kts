@@ -17,11 +17,18 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions{
+            annotationProcessorOptions{
+                argument("room.schemaLocation","$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -71,6 +78,8 @@ dependencies {
     ksp("androidx.room:room-compiler:$room_version")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     implementation ("androidx.room:room-ktx:$room_version")
+    //Schema için
+    annotationProcessor("androidx.room:room-compiler:$room_version")
 
     //WorkManager
     val work_version = "2.7.1" // En güncel sürümü kontrol edin

@@ -63,8 +63,8 @@ class UpdateTaskFragment : Fragment() {
         currentTask?.let {task->
             if(binding.editTextTaskName.text.isNotEmpty() && binding.editTextTaskDesc.text.isNotEmpty()){
                 //TODO("Bu işlemi edit text in değeri değişmesini dinleyen bir yapı olabilir.")
-                val taskName = binding.editTextTaskName.text.toString()
-                val taskDesc = binding.editTextTaskDesc.text.toString()
+                val taskName = binding.editTextTaskName.text.toString().trim()
+                val taskDesc = binding.editTextTaskDesc.text.toString().trim()
                 val updatedTask = task.copy(taskName=taskName, taskDesc= taskDesc).apply { taskId = task.taskId }
 
                 println("UpdateFragment - Mevcut Task ID: ${task.taskId}, Yeni Task ID: ${updatedTask.taskId}")

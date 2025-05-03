@@ -35,8 +35,6 @@ class SettingsFragment : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        notificationHelper = NotificationPermissionHelper(this)
-        notificationHelper.registerLauncher()
 
     }
 
@@ -47,6 +45,10 @@ class SettingsFragment : BottomSheetDialogFragment() {
         // Inflate the layout for this fragment
         _binding = FragmentSettingsBinding.inflate(inflater,container,false)
         val view = binding.root
+
+        notificationHelper = NotificationPermissionHelper(this)
+        notificationHelper.registerLauncher()
+
         return view
     }
 
@@ -59,7 +61,7 @@ class SettingsFragment : BottomSheetDialogFragment() {
 
         binding.notificationSwitch.setOnCheckedChangeListener { _, checked ->
             if(checked){
-                notificationHelper.requestNotify(view)
+                notificationHelper.requestNotify(requireView())
             }else{
                 SettingsManager.setNotificationsEnabled(requireContext(),false)
                 NotificationUtil.cancelNotification(requireContext())
@@ -82,7 +84,6 @@ class SettingsFragment : BottomSheetDialogFragment() {
 
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null

@@ -30,6 +30,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapter : TaskRecyclerAdapter
     private lateinit var viewModel:HomeViewModel
     private lateinit var notificationHelper: NotificationPermissionHelper
+    private lateinit var rootView: View
 
     private var totalTasks = 0
     private var completedTasks = 0
@@ -46,8 +47,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
         val view = binding.root
-
-
         println("HomeFragment onCreateView Called!")
 
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
@@ -70,6 +69,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         println("HomeFragment onViewCreated Called!")
 
+        rootView = requireActivity().findViewById(android.R.id.content)
+
         observeLiveData()
         //görev ekleyince ilk başta observe liveData çalıştığı için eskisi gözüküyor.
         // Sonrasında getDataFromRoom 1.2 saniye sonra çalıştığı için yeni liste gelmiş oluyor.
@@ -77,7 +78,7 @@ class HomeFragment : Fragment() {
         //IsFirstTime Kontrolü
         if(SettingsManager.isFirstTime(requireContext())){
             SettingsManager.setFirstTime(requireContext(),false)
-            notificationHelper.requestNotify(view)
+            notificationHelper.requestNotify(rootView)
         }
 
         //Toolbar Menu

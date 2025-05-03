@@ -39,7 +39,7 @@ class NotificationWorker(context: Context, workerParameters: WorkerParameters) :
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
-        val notification = NotificationCompat.Builder(applicationContext,"daily_notification_channel1")
+        val notification = NotificationCompat.Builder(applicationContext,"daily_notification_channel2")
             .setContentTitle("Günlük Hatırlatma")
             .setContentText("Bugünün görevlerini kontrol ettin mi?")
             .setSmallIcon(R.drawable.notifications_active)

@@ -22,7 +22,7 @@ class NotificationPermissionHelper(private val fragment: Fragment) {
                     //izin istenecek
                     Snackbar.make(view,"Permission needed for notifications", Snackbar.LENGTH_INDEFINITE).setAction("Give Permission"){
                         permissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
-                    }.show()
+                    }.setAnchorView(view).show()
                 }else{
                     //android göstermezse
                     permissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)

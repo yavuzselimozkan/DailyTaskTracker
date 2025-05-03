@@ -52,8 +52,8 @@ class NewTaskFragment : Fragment() {
     {
         if(binding.editTextTaskName.text.isNotEmpty() && binding.editTextDesc.text.isNotEmpty())
         {
-            val taskName = binding.editTextTaskName.text.toString()
-            val taskDesc = binding.editTextDesc.text.toString()
+            val taskName = binding.editTextTaskName.text.toString().trim()
+            val taskDesc = binding.editTextDesc.text.toString().trim()
             val task = Task(taskName,taskDesc)
             viewModel.insertTask(task)
             binding.editTextTaskName.text.clear(); binding.editTextDesc.text.clear()

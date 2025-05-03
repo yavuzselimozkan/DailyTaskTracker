@@ -50,7 +50,7 @@ class NewTaskFragment : Fragment() {
 
     private fun saveNewTask(view: View)
     {
-        if(binding.editTextTaskName.text.isNotEmpty() && binding.editTextDesc.text.isNotEmpty())
+        if(binding.editTextTaskName.text.trim().isNotEmpty() && binding.editTextDesc.text.trim().isNotEmpty())
         {
             val taskName = binding.editTextTaskName.text.toString().trim()
             val taskDesc = binding.editTextDesc.text.toString().trim()

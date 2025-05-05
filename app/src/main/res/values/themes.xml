@@ -21,5 +21,11 @@
 
     </style>
 
-    <style name="Theme.DailyTaskTracker" parent="Base.Theme.DailyTaskTracker" />
+    <style name="Theme.DailyTaskTracker.Launch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Diğer klasik özellikler -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

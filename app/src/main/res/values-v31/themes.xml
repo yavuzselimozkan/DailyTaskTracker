@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.DailyTaskTracker.Launch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- API 31+ için sistem splash'ı devre dışı bırakıyoruz -->
+        <item name="android:windowSplashScreenBackground">@android:color/transparent</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@null</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+
+        <!-- Diğer klasik özellikler -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

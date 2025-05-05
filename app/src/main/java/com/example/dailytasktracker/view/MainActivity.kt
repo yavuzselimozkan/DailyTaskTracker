@@ -2,6 +2,7 @@ package com.example.dailytasktracker.view
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         badge = binding.bottomMenu.getOrCreateBadge(R.id.favouriteTaskFragment)
         badge.maxCharacterCount = 2
         badge.backgroundColor = Color.TRANSPARENT
-
+        badge.badgeTextColor = MaterialColors.getColor(this,R.attr.colorOnSurface,Color.BLACK)
 
         //Favourite Icon Badge
         activityViewModel.favouriteCount.observe(this){count->
@@ -42,15 +43,12 @@ class MainActivity : AppCompatActivity() {
             badge.number = count
         }
 
-        //BadgeIsActive
+        //BadgeIsActive && OnBoardScreen
         navHostFragment.navController.addOnDestinationChangedListener{_,destination,_ ->
-            val isActive = destination.id == R.id.favouriteTaskFragment
-            if(isActive){
-                badge.badgeTextColor = MaterialColors.getColor(this,R.attr.colorOnSurface,Color.BLACK)
-            }else{
-                badge.badgeTextColor = MaterialColors.getColor(this, R.attr.colorOnSurface,Color.BLACK)
+            when(destination.id){
+                R.id.splashFragment,R.id.viewPagerFragment -> binding.bottomMenu.visibility = View.GONE
+                else -> binding.bottomMenu.visibility = View.VISIBLE
             }
-
         }
 
         //Light-Dark Theme

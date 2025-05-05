@@ -5,4 +5,14 @@
     <string name="bos_liste">boş liste</string>
     <string name="empty_list">Görev Yok. 👀</string>
     <string name="add_tasks">Biraz görev ekleyebilirsin.</string>
+    <string name="first_screen_onboard">First Screen Onboard</string>
+    <string name="first_screen_desc">Bu sayfadan tüm görevlerini görebilir, ilerlemeni takip edebilirsin.</string>
+    <string name="second_screen_desc">Bu sayfadan görevlerini ekleyebilirsin.</string>
+    <string name="third_screen_desc">Bu sayfada favoriye aldığın görevleri görebilirsin. \n Favoriye alınmış görevler hep burada kalır unutma :)</string>
+    <string name="fourth_screen_desc">Ayarlar tuşuna bastığın zaman çıkan ayarlar sayfasından bildirimleri yönetebilir ve temayı istediğin gibi seçebilirsin.</string>
+    <string name="btn_next">Sonraki</string>
+    <string name="btn_previous">Önceki</string>
+    <string name="btn_finish">Bitir</string>
+    <string name="txt_welcome">Selam, Daily Task Tracker\'a hoşgeldin! Uygulamayı tanımak için ufak bir yolculuğa çıkalım.</string>
+    <string name="daily_task_tracker">Daily Task Tracker</string>
 </resources>

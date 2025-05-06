@@ -29,7 +29,7 @@ interface TaskDAO {
     //Task @entity annotation' ı aldığı için tablo oldu artık.
 
     @Query("select * from Task where isFavourite = 1")
-    suspend fun getAllFavTask():List<Task>
+    fun getAllFavTask():Flow<List<Task>>
 
     @Query("delete from Task")
     suspend fun deleteAll()

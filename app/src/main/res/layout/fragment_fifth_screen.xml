@@ -1,59 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboard.screens.FourthScreen">
+    tools:context=".onboard.screens.FifthScreen">
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/fourth_screen"
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fifth_screen"
+        android:contentDescription="@string/detail_tutorial_screen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/fourth_screen_desc"
-        android:textColor="@color/white"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="268dp"
+        android:text="@string/detail_desc"
+        android:textColor="#F4F4F4"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/btnFinish"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginEnd="18dp"
         android:backgroundTint="@color/cardview_dark_background"
-        android:text="@string/btn_next"
+        android:text="@string/btn_finish"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
 
     <Button
         android:id="@+id/btnPrevious"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="18dp"
+        android:backgroundTint="@color/cardview_dark_background"
         android:text="@string/btn_previous"
         android:textColor="@color/white"
-        android:backgroundTint="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

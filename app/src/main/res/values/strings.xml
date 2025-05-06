@@ -25,4 +25,6 @@
     <string name="btn_finish">Bitir</string>
     <string name="txt_welcome">Selam, Daily Task Tracker\'a hoşgeldin! Uygulamayı tanımak için ufak bir yolculuğa çıkalım.</string>
     <string name="daily_task_tracker">Daily Task Tracker</string>
+    <string name="detail_desc">Eklediğin görevlerin üstüne tıklayarak o görev ile ilgili detaylara erişebilirsin.</string>
+    <string name="detail_tutorial_screen">detail tutorial screen</string>
 </resources>

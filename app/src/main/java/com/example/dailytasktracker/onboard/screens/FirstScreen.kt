@@ -38,4 +38,9 @@ class FirstScreen : Fragment() {
             viewPager.currentItem = 1
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

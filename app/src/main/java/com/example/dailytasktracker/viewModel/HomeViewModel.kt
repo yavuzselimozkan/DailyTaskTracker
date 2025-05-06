@@ -28,7 +28,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setCompleteTask(id:Int){
         viewModelScope.launch(Dispatchers.IO){
-            val taskDao = TaskDatabase(getApplication()).taskDao()
             val isComplete = taskDao.getIsComplete(id)
             taskDao.setCompleteTask(id,!isComplete)
             //taskListLiveData.postValue(taskDao.getAllTask()) flow + asLiveData için gerek yok buna

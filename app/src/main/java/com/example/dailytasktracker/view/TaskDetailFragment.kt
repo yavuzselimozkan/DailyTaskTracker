@@ -88,7 +88,7 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
             binding.taskDescDetail.text = it.taskDesc
             println("task fav ${viewModel.taskLiveData.value?.isFavourite}")
             if(it.isFavourite){
-                //task a basıp detail açıldığında (yüklendiğinde) bu tetiklenecek ve taskLivedata observe olacak. Favorililik gözükecek
+                //task a basıp fifth_screen açıldığında (yüklendiğinde) bu tetiklenecek ve taskLivedata observe olacak. Favorililik gözükecek
                 binding.imgFavourite.setImageResource(R.drawable.favorite_red)
             }else{
                 binding.imgFavourite.setImageResource(R.drawable.favorite_border)
@@ -121,7 +121,6 @@ class TaskDetailFragment() : BottomSheetDialogFragment() {
         // Navigate işlemi ile tekrar homeFragment gösterildiği için onViewCreated ta işlemler aynen gerçekleşti.
         viewModel.deleteTask(id)
         dismiss()
-        navController.navigate(R.id.action_taskDetailFragment_to_homeFragment)
         Toast.makeText(view.context,"Görev başarıyla silindi!",Toast.LENGTH_LONG).show()
         println("Görev silindi! $id")
     }

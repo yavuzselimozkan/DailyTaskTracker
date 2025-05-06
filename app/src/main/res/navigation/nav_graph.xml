@@ -47,12 +47,21 @@
             app:destination="@id/updateTaskFragment"
             app:popUpTo="@id/updateTaskFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_taskDetailFragment_to_favouriteTaskFragment"
+            app:destination="@id/favouriteTaskFragment"
+            app:popUpTo="@id/favouriteTaskFragment"
+            app:popUpToInclusive="true" />
     </dialog>
     <fragment
         android:id="@+id/favouriteTaskFragment"
         android:name="com.example.dailytasktracker.view.FavouriteTaskFragment"
         android:label="fragment_favourite_task"
-        tools:layout="@layout/fragment_favourite_task" />
+        tools:layout="@layout/fragment_favourite_task" >
+        <action
+            android:id="@+id/action_favouriteTaskFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/updateTaskFragment"
         android:name="com.example.dailytasktracker.view.UpdateTaskFragment"

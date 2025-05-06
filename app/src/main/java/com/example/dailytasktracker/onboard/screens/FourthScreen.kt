@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.FourthScreenBinding
@@ -36,8 +35,8 @@ class FourthScreen : Fragment() {
 
         viewPager = requireActivity().findViewById(R.id.viewPager)
 
-        binding.btnFinish.setOnClickListener {
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+        binding.btnNext.setOnClickListener {
+            viewPager.currentItem = 4
         }
         binding.btnPrevious.setOnClickListener {
             viewPager.currentItem = 2

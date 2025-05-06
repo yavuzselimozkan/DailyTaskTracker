@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.example.dailytasktracker.R
+import com.example.dailytasktracker.onboard.screens.FifthScreen
 import com.example.dailytasktracker.onboard.screens.FirstScreen
 import com.example.dailytasktracker.onboard.screens.FourthScreen
 import com.example.dailytasktracker.onboard.screens.SecondScreen
@@ -26,7 +27,7 @@ class ViewPagerFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_view_pager, container, false)
 
         val fragmentList = arrayListOf<Fragment>(
-            FirstScreen(),SecondScreen(),ThirdScreen(),FourthScreen()
+            FirstScreen(),SecondScreen(),ThirdScreen(),FourthScreen(),FifthScreen()
         )
         val viewPageAdapter = ViewPageAdapter(fragmentList,requireActivity().supportFragmentManager,lifecycle)
         val viewPager = view.findViewById<ViewPager2>(R.id.viewPager)

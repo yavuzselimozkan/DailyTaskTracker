@@ -3,10 +3,12 @@ package com.example.dailytasktracker.adapter
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dailytasktracker.R
 import com.example.dailytasktracker.databinding.RecyclerRowBinding
 import com.example.dailytasktracker.model.Task
+import com.example.dailytasktracker.view.FavouriteTaskFragmentDirections
 
 class FavTaskRecyclerAdapter(
     private var favTaskList: ArrayList<Task>,
@@ -44,6 +46,8 @@ class FavTaskRecyclerAdapter(
 
         holder.itemView.setOnClickListener {
             holder.itemView.isEnabled = false
+            val action = FavouriteTaskFragmentDirections.actionFavouriteTaskFragmentToTaskDetailFragment(favTaskList[position].taskId)
+            Navigation.findNavController(it).navigate(action)
             println("Task ${favTaskList[position].isComplete}")
 
             holder.itemView.postDelayed({

@@ -40,12 +40,9 @@ class FavouriteTaskFragment : Fragment() {
         adapter = FavTaskRecyclerAdapter(arrayListOf()){id->
             viewModel.setCompleteTask(id)
         }
-        viewModel.getAllFavTask()
 
         binding.favRecyclerView.adapter = adapter
         binding.favRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        //TODO("Favori taskın üstüne basınca taskDetilFragment açılmalı mı?")
 
         observeLiveData()
     }
